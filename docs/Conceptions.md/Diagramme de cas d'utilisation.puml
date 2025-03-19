@@ -1,0 +1,52 @@
+@startuml DiagrammeDeCasDUtilisation
+left to right direction
+actor Utilisateur
+actor Administrateur
+actor Chatbot
+rectangle "Mirasya Botanicals" {
+  usecase "Parcourir les Produits" as BrowseProducts
+  usecase "Ajouter au Panier" as AddToCart
+  usecase "Modifier le Panier" as ModifyCart
+  usecase "Passer une Commande" as PlaceOrder
+  usecase "Suivre une Commande" as TrackOrder
+  usecase "Effectuer un Paiement" as MakePayment
+  usecase "S'Inscrire" as Register
+  usecase "Se Connecter" as Login
+  usecase "Mettre à Jour le Profil" as UpdateProfile
+  usecase "Rechercher des Produits" as SearchProducts
+  usecase "Filtrer les Produits" as FilterProducts
+  usecase "Répondre aux Questions Fréquentes" as AnswerFAQ
+  usecase "Fournir des Informations sur les Produits" as ProvideProductInfo
+  usecase "Aider à la Navigation" as AssistNavigation
+  usecase "Ajouter un Produit" as AddProduct
+  usecase "Modifier un Produit" as ModifyProduct
+  usecase "Supprimer un Produit" as DeleteProduct
+  usecase "Gérer les Catégories" as ManageCategories
+  usecase "Afficher les Commandes" as ViewOrders
+  usecase "Mettre à Jour l'État des Commandes" as UpdateOrderStatus
+  usecase "Gérer les Utilisateurs" as ManageUsers
+}
+
+Utilisateur --> BrowseProducts
+Utilisateur --> AddToCart
+Utilisateur --> ModifyCart
+Utilisateur --> PlaceOrder
+Utilisateur --> TrackOrder
+Utilisateur --> MakePayment
+Utilisateur --> Register
+Utilisateur --> Login
+Utilisateur --> UpdateProfile
+Utilisateur --> SearchProducts
+Utilisateur --> FilterProducts
+Chatbot --> AnswerFAQ
+Chatbot --> ProvideProductInfo
+Administrateur --> AddProduct
+Administrateur --> ModifyProduct
+Administrateur --> DeleteProduct
+Administrateur --> ManageCategories
+Administrateur --> ViewOrders
+Administrateur --> UpdateOrderStatus
+Administrateur --> ManageUsers
+
+Utilisateur --|> Chatbot : utilise
+@enduml

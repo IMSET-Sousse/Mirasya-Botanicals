@@ -1,0 +1,18 @@
+@startuml DiagrammeDeDeploiement
+node "Serveur Next.js" {
+  component "Application Next.js" as NextApp
+  database "SQLite Database" as SQLiteDB
+}
+
+node "Serveur API de Paiement" {
+  component "API Stripe/PayPal" as PaymentAPI
+}
+
+node "Navigateur Client" {
+  component "Navigateur Web" as Browser
+}
+
+Browser --> NextApp : Requêtes HTTP
+NextApp --> SQLiteDB : Requêtes SQL
+NextApp --> PaymentAPI : Requêtes API
+@enduml
